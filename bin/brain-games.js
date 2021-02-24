@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import askUserNameAndGreat from '../src/cli.js';
+import * as cli from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-
-askUserNameAndGreat();
+cli.sayWelcome();
+const userName = cli.askUserName();
+cli.greetUserWithName(userName);
