@@ -23,11 +23,11 @@ export const getRandomNumber = (to = 20) => {
   return Math.floor(Math.random() * to);
 };
 
-export const sayCongratulations = (userName) => {
+export const sayCongratulations = userName => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export const sayLetSTryAgain = (userName) => {
+export const sayLetSTryAgain = userName => {
   console.log(`Let's try again, ${userName}!`)
 };
 
@@ -54,4 +54,10 @@ export const getProgression = (length = 10, step) => {
   }
 
   return progression;
+};
+
+export const isPrime = num => {
+  for(var i = 2; i < num; i += 1)
+    if(num % i === 0) return false;
+  return num > 1;
 };
