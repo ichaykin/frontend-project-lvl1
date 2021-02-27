@@ -40,3 +40,18 @@ export const getNOD = (firstNumber, secondNumber) => {
     return Math.abs(firstNumber);
   }
 };
+
+export const getProgression = (length = 10, step) => {
+  if (!step) {
+    step = getRandomNumber(10);
+  }
+
+  const progression = [getRandomNumber(10)];
+
+  for (let i = 1; i < length; i += 1) {
+    const nextNumber = progression[i - 1] + step;
+    progression.push(nextNumber);
+  }
+
+  return progression;
+};
