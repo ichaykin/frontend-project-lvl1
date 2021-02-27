@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cli from '../src/cli.js';
-import { brainGame } from '../src/index.js';
+import brainGame from '../src/index.js';
 
 cli.sayWelcome();
 const userName = cli.askUserName();
@@ -11,22 +11,22 @@ const questions = [];
 const roundCound = cli.getRoundCount();
 
 for (let i = 0; i < roundCound; i += 1) {
-    const randomNumber = cli.getRandomNumber();
-    const text = randomNumber;
-    const currentAnswer = cli.isPrime(randomNumber) ? 'yes' : 'no';
+  const randomNumber = cli.getRandomNumber();
+  const text = randomNumber;
+  const currentAnswer = cli.isPrime(randomNumber) ? 'yes' : 'no';
 
-    const question = {
-        text: text,
-        correctAnswer: currentAnswer
-    };
+  const question = {
+    text,
+    correctAnswer: currentAnswer,
+  };
 
-    questions.push(question);
+  questions.push(question);
 }
 
 const result = brainGame(questionDescription, questions);
 
 if (result) {
-    cli.sayCongratulations(userName);
+  cli.sayCongratulations(userName);
 } else {
-    cli.sayLetSTryAgain(userName);
+  cli.sayLetSTryAgain(userName);
 }
