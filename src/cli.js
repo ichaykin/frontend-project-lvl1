@@ -32,3 +32,11 @@ export const sayLetSTryAgain = (userName) => {
 };
 
 export const getRoundCount = () => 3;
+
+export const getNOD = (firstNumber, secondNumber) => {
+  if (secondNumber) {
+    return getNOD(secondNumber, firstNumber % secondNumber);
+  } else {
+    return Math.abs(firstNumber);
+  }
+};
