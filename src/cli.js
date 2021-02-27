@@ -14,16 +14,21 @@ export const greetUserWithName = name => {
   console.log(`Hello, ${name}!`);
 };
 
+export const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[Math.floor(Math.random() * operators.length)]
+}
+
 export const getRandomNumber = (to = 20) => {
   return Math.floor(Math.random() * to);
 };
 
-export const sayQuestion = number => {
-  console.log(`Question: ${number}`);
+export const sayCongratulations = (userName) => {
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export const getAnswer = () => {
-  return readlineSync.question('Your answer: ');
+export const sayLetSTryAgain = (userName) => {
+  console.log(`Let's try again, ${userName}!`)
 };
 
-export const getCorrectAnswer = number => isEven(number) ? 'yes' : 'no';
+export const getRoundCount = () => 3;

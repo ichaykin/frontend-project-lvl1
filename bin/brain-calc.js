@@ -6,16 +6,19 @@ cli.sayWelcome();
 const userName = cli.askUserName();
 cli.greetUserWithName(userName);
 
-const questionDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+const questionDescription = 'What is the result of the expression?';
 const questions = [];
 const roundCound = cli.getRoundCount();
 
 for (let i = 0; i < roundCound; i += 1) {
-    const randomNumber = cli.getRandomNumber()
-    const currentAnswer = cli.isEven(randomNumber) ? 'yes' : 'no';
+    const firstNumber = cli.getRandomNumber();
+    const secondNumber = cli.getRandomNumber();
+    const operator = cli.getRandomOperator();
+    const text = `${firstNumber} ${operator} ${secondNumber}`;
+    const currentAnswer = eval(text).toString();
 
     const question = {
-        text: randomNumber,
+        text: text,
         correctAnswer: currentAnswer
     };
 
